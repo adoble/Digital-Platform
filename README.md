@@ -31,7 +31,7 @@
 - For developers implemented advance systems with AI capabilities, the platform provides means to configure, train and run neural networks.
 
 ## Agility
-
+- For developers who have to implemnt new product ideas the platform offers a set of tools to support an agile dvelopment, including agile project tracking, epic and use case tracking, source control management, testing, version and configuration  control, service design, build management, continuous integration.
 - For developers who need to use standard services the platform can provide these on a self-service basis over APIs. These services are _(to be done)._
 - For developers who need standard technology stacks for development, the platform is a central point for obtaining these on a self service basis so that they can be quickly used. Unlike a typical installation of these, the platform provides and runs the complete run time environment for the technology stacks. The technology stacks provided are _(to be done)_.
 - For development managers who have teams using the platform and for the operators of the platform, the platform provides change-back / show-back mechanisms based on the usage of the services.
