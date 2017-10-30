@@ -10,9 +10,15 @@
         - function: Scalable-Application-Platform
           provided-assets:
             - Task-Services
+          uses:
+            - Computing-Instances
+             - Storage-Instances
         - function: Scalable-Data-Platform
           provided-assets:
             - Data-Services
+          uses:
+            - Computing-Instances
+            - Storage-Instances
     - category: Composition
       capabilities:
         - function: Service-Composition-and-Process-Automation
@@ -31,8 +37,42 @@
              - Apps
           uses: API Gateways and Event Processing
         - function: Web-UI-Platform
-          provided-assets: Web-UIs
+          provided-assets:
+            - Web-UIs
           uses: API Gateways and Event Processing
         - function: Device-Platform
-          provided-assets: Devices
+          provided-assets:
+            - Devices
           uses: API Gateways and Event Processing
+    - category: Ecosystem
+      capabilities:
+        - function: External Platforms
+        - function: External UIs and Apps
+        - function: External Devices
+        - function: External Processes
+        - function: External Data
+      assets:
+        - asset: Partner   # Review this
+          provided-from:
+            - External Platforms
+            - External UIs and APIs
+            - External Devices
+            - External Processes
+            - External Data
+    - category: As-a-Service
+      assets:
+        - asset: Apps
+        - asset: Web-UIs
+        - asset: Devices
+        - asset: APIs
+        - asset: Services
+        - asset: Task-Services
+        - asset: Data-Services
+        - asset: Computing-Instances
+        - asset: Storage-Instances
+    - category: External Data Sources
+      assets:
+        - asset: External-Data
+        - asset: External-Sensor-Data
+        - asset: Social-Data
+        - asset: External-Processes-Data
