@@ -1,0 +1,38 @@
+  digital-platform:
+    - category: Infrastructure
+      capabilities:
+        - function: Scalable Computing and Storage Platform
+          provided-assets:
+            - Computing-Instances
+            - Storage-Instances
+    - category: Services
+      capabilities:
+        - function: Scalable-Application-Platform
+          provided-assets:
+            - Task-Services
+        - function: Scalable-Data-Platform
+          provided-assets:
+            - Data-Services
+    - category: Composition
+      capabilities:
+        - function: Service-Composition-and-Process-Automation
+          provided-assets:
+            - Services
+        - function: Identity-and-Connectivity
+          provided-assets:
+            - Identities
+    - category: Interaction
+      capabilities:
+        - function: API Gateways and Event Processing
+          provided-assets:
+            - APIs
+        - function: App-Platforms
+          provided-assets:
+             - Apps
+          uses: API Gateways and Event Processing
+        - function: Web-UI-Platform
+          provided-assets: Web-UIs
+          uses: API Gateways and Event Processing
+        - function: Device-Platform
+          provided-assets: Devices
+          uses: API Gateways and Event Processing
