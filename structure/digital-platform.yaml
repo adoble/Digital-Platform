@@ -24,9 +24,13 @@
         - function: Service-Composition-and-Process-Automation
           provided-assets:
             - Services
-        - function: Identity-and-Connectivity
+        - function: Identity
           provided-assets:
             - Identities
+        - uses:
+            - asset: Task-Services
+            - asset: Data-Services
+            - asset: Analytic-Services
     - category: Interaction
       capabilities:
         - function: API Gateways and Event Processing
@@ -52,8 +56,8 @@
         - function: External Processes
         - function: External Data
       assets:
-        - asset: Partner   # Review this
-          provided-from:
+        - function: Partner   # Review this in the diagram
+          provided-assets:
             - External Platforms
             - External UIs and APIs
             - External Devices
@@ -68,11 +72,15 @@
         - asset: Services
         - asset: Task-Services
         - asset: Data-Services
+        - asset: Analytic-Services
         - asset: Computing-Instances
         - asset: Storage-Instances
     - category: External Data Sources
       assets:
         - asset: External-Data
         - asset: External-Sensor-Data
+          alias: Sensors
         - asset: Social-Data
+          alias: Social
         - asset: External-Processes-Data
+          alias: Ext. Processes
