@@ -11,50 +11,84 @@
           provided-assets:
             - Task-Services
           uses:
-            - Computing-Instances
-             - Storage-Instances
+            - asset: Computing-Instances
+            - asset: Storage-Instances
         - function: Scalable-Data-Platform
           provided-assets:
             - Data-Services
+            - Analytic-Services
           uses:
-            - Computing-Instances
-            - Storage-Instances
+            - asset: Computing-Instances
+            - asset: Storage-Instances
     - category: Composition
       capabilities:
         - function: Service-Composition-and-Process-Automation
           provided-assets:
             - Services
-        - function: Identity
-          provided-assets:
-            - Identities
-        - uses:
+          uses:
             - asset: Task-Services
             - asset: Data-Services
             - asset: Analytic-Services
+            - asset: Identities
+        - function: Identity
+          provided-assets:
+            - Identities
     - category: Interaction
       capabilities:
         - function: API Gateways and Event Processing
           provided-assets:
             - APIs
+          uses:
+            - asset: Services
+            - asset: Identities
         - function: App-Platforms
           provided-assets:
              - Apps
-          uses: API Gateways and Event Processing
+          uses:
+            - asset: APIs
         - function: Web-UI-Platform
           provided-assets:
             - Web-UIs
-          uses: API Gateways and Event Processing
+          uses:
+            - asset: APIs
         - function: Device-Platform
           provided-assets:
             - Devices
-          uses: API Gateways and Event Processing
+          uses:
+            - asset: APIs
     - category: Ecosystem
       capabilities:
         - function: External Platforms
+          provided-assets:
+            - asset: APIs
+            - asset: Events  #composition also!!!
+          uses:
+            - asset: APIs
+            - asset: Events
         - function: External UIs and Apps
+          provided-assets:
+            - asset: Events
+          uses:
+            - asset: APIs
+            - asset: Events
         - function: External Devices
+          provided-assets:
+            - asset: Events
+          uses:
+            - asset: APIs
+            - asset: Events
         - function: External Processes
+          provided-assets:
+            - asset: APIs
+            - asset: Events
+          uses:
+            - asset: APIs
+            - asset: Events
         - function: External Data
+          provided-assets:
+            - asset: Data
+            - asset: APIs
+            - asset: Events
       assets:
         - function: Partner   # Review this in the diagram
           provided-assets:
